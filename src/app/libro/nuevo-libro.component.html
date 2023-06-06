@@ -4,8 +4,12 @@
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input type="text" class="form-control" id="titulo" 
-                           name="titulo" [(ngModel)]="titulo" required="">
+                    <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required="">
+
+                    <label class="mt-3" for="nombreAutor">Autor</label>
+                    <select class="form-control" id="nombreAutor" name="nombreAutor" [(ngModel)]="nombreAutor">
+                        <option *ngFor="let autor of autores" [value]="autor.nombre">{{ autor.nombre }}</option>
+                    </select>
                 </div>
                 <button class="btn btn-outline-success btn-block mt-3 col-12" [disabled]="!f.valid">Crear</button>
             </form>

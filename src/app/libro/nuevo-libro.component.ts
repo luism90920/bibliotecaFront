@@ -3,6 +3,8 @@ import { LibroService } from '../service/libro.service';
 import { ToastrService } from 'ngx-toastr';
 import { Libro } from '../models/libro';
 import { Route, Router } from '@angular/router';
+import { AutorService } from '../service/autor.service';
+import { Autor } from '../models/autor';
 
 @Component({
   selector: 'app-nuevo-libro',
@@ -12,9 +14,12 @@ import { Route, Router } from '@angular/router';
 export class NuevoLibroComponent implements OnInit {
 
   titulo = '';
+  autores: Autor[] = [];
+  nombreAutor = '';
 
   constructor(
     private libroService: LibroService,
+    private autorService: AutorService,
     private toastr: ToastrService,
     private router: Router
   ){
@@ -22,11 +27,22 @@ export class NuevoLibroComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      
+      this.cargarAutor();
+  }
+
+  cargarAutor(): void {
+    this.autorService.lista().subscribe(
+      data => {
+        this.autores = data;
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   onCreate(): void {
-    const libro = new Libro(this.titulo);
+    const libro = new Libro(this.titulo, this.nombreAutor);
     this.libroService.save(libro).subscribe(
       data => {
         this.toastr.success('Libro creado', 'OK',{
@@ -41,4 +57,6 @@ export class NuevoLibroComponent implements OnInit {
       }
     );
   }
+
+
 }

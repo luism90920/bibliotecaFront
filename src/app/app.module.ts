@@ -14,6 +14,10 @@ import { EditarLibroComponent } from './libro/editar-libro.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { ListaAutorComponent } from './autor/lista-autor.component';
+import { DetalleAutorComponent } from './autor/detalle-autor.component';
+import { NuevoAutorComponent } from './autor/nuevo-autor.component';
+import { EditarAutorComponent } from './autor/editar-autor.component';
 
 
 @NgModule({
@@ -23,6 +27,10 @@ import {FormsModule} from '@angular/forms';
     DetalleLibroComponent,
     NuevoLibroComponent,
     EditarLibroComponent,
+    ListaAutorComponent,
+    DetalleAutorComponent,
+    NuevoAutorComponent,
+    EditarAutorComponent,
   ],
   imports: [
     BrowserModule,
