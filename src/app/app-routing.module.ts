@@ -5,11 +5,17 @@ import { DetalleLibroComponent } from './libro/detalle-libro.component';
 import { EditarLibroComponent } from './libro/editar-libro.component';
 import { NuevoLibroComponent } from './libro/nuevo-libro.component';
 import { NuevoAutorComponent } from './autor/nuevo-autor.component';
+import { ListaAutorComponent } from './autor/lista-autor.component';
+import { DetalleAutorComponent } from './autor/detalle-autor.component';
+import { EditarAutorComponent } from './autor/editar-autor.component';
 
 const routes: Routes = [
   {path: '', component: ListaLibroComponent},
-  {path: 'detalle/:id', component: DetalleLibroComponent},
-  {path: 'editar/:id', component: EditarLibroComponent},
+  {path: 'listaAutores', component: ListaAutorComponent},
+  {path: 'detalleLibro/:id', component: DetalleLibroComponent},
+  {path: 'detalleAutor/:id', component: DetalleAutorComponent},
+  {path: 'editarLibro/:id', component: EditarLibroComponent},
+  {path: 'editarAutor/:id', component: EditarAutorComponent},
   {path: 'nuevoLibro', component: NuevoLibroComponent},
   {path: 'nuevoAutor', component: NuevoAutorComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
@@ -18,6 +24,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -22,7 +22,7 @@ export class EditarLibroComponent implements OnInit{
   constructor(
     private libroService: LibroService,
     private autorService: AutorService,
-    private activatedRouter: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
   ){}
@@ -40,7 +40,7 @@ export class EditarLibroComponent implements OnInit{
   }
 
   ngOnInit(): void {
-      const id = this.activatedRouter.snapshot.params['id'];
+      const id = this.activatedRoute.snapshot.params['id'];
       this.libroService.detail(id).subscribe(
         data => {
           //insertamos el libro para llamar al "titulo" del libro a modificar
@@ -62,7 +62,7 @@ export class EditarLibroComponent implements OnInit{
   }
 
   onUpdate(): void {
-    const id = this.activatedRouter.snapshot.params['id'];
+    const id = this.activatedRoute.snapshot.params['id'];
     this.libroService.update(id, this.libro).subscribe(
       data => {
         this.toastr.success('Libro Actualizado', 'OK',{
