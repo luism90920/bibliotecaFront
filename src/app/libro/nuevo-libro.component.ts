@@ -15,6 +15,7 @@ export class NuevoLibroComponent implements OnInit {
 
   titulo = '';
   autores: Autor[] = [];
+  ejemplares = null;
   nombreAutor = '';
 
   constructor(
@@ -42,7 +43,7 @@ export class NuevoLibroComponent implements OnInit {
   }
 
   onCreate(): void {
-    const libro = new Libro(this.titulo, this.nombreAutor);
+    const libro = new Libro(this.titulo, this.nombreAutor, this.ejemplares);
     this.libroService.save(libro).subscribe(
       data => {
         this.toastr.success('Libro creado', 'OK',{

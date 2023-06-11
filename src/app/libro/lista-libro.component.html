@@ -4,6 +4,8 @@
             <th scope="col">Id</th>
             <th scope="col">Título</th>
             <th scope="col">Autor</th>
+            <th scope="col">Ejemplares disponibles</th>
+            <th scope="col">Ejemplares prestados</th>
             <th scope="col">Ver</th>
             <th scope="col">Editar</th>
             <th scope="col">Eliminar</th>
@@ -14,6 +16,8 @@
             <td>{{libro.id}}</td>
             <td>{{libro.titulo}}</td>
             <td>{{libro.autor.nombre}}</td>
+            <td>{{libro.ejemplares}}</td>
+            <td>{{libro.ejemplares}}</td>
             <td><button class="btn btn-outline-primary" routerLink="/detalleLibro/{{libro.id}}"><i class="fa-regular fa-eye"></i> Ver</button></td>
             <td><button class="btn btn-outline-warning" routerLink="/editarLibro/{{libro.id}}"><i class="fa-regular fa-pen-to-square"></i> Editar</button></td>
             <td><button class="btn btn-outline-danger" (click)="borrar(libro.id)"><i class="fa-solid fa-trash-can"></i> Eliminar</button></td>

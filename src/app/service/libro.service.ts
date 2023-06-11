@@ -15,6 +15,10 @@ export class LibroService {
   public lista(): Observable<Libro[]> {
     return this.httpClient.get<Libro[]>(this.libroURL + 'lista');
   }
+  
+  public listaLibroIdAutor(idAutor: number): Observable<Libro[]> {
+    return this.httpClient.get<Libro[]>(this.libroURL + `listaLibroIdAutor/${idAutor}`);
+  }
 
   public detail(id: number): Observable<Libro> {
     return this.httpClient.get<Libro>(this.libroURL + `detail/${id}`);
