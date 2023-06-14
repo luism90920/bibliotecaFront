@@ -19,6 +19,14 @@ import { EditarAutorComponent } from './autor/editar-autor.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { NuevoEditorialComponent } from './editorial/nuevo-editorial.component';
+import { ListaEditorialComponent } from './editorial/lista-editorial.component';
+import { EditarEditorialComponent } from './editorial/editar-editorial.component';
+import { DetalleEditorialComponent } from './editorial/detalle-editorial.component';
+import { NuevoGeneroComponent } from './genero/nuevo-genero.component';
+import { ListaGeneroComponent } from './genero/lista-genero.component';
+import { EditarGeneroComponent } from './genero/editar-genero.component';
+import { DetalleGeneroComponent } from './genero/detalle-genero.component';
 
 
 
@@ -33,6 +41,14 @@ import {FormsModule} from '@angular/forms';
     DetalleAutorComponent,
     NuevoAutorComponent,
     EditarAutorComponent,
+    NuevoEditorialComponent,
+    ListaEditorialComponent,
+    EditarEditorialComponent,
+    DetalleEditorialComponent,
+    NuevoGeneroComponent,
+    ListaGeneroComponent,
+    EditarGeneroComponent,
+    DetalleGeneroComponent,
   ],
   imports: [
     BrowserModule,

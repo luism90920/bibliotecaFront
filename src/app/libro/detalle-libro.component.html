@@ -3,12 +3,14 @@
         <div class="col-md-4 mx-auto">
             <div class="card" style="width: 18rem;">
                 <div class="card-header text-center">
-                    <b>Detalle</b>
+                    <b>Detalle del libro</b>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><b>ID: </b>{{libro.id}}</li>
                     <li class="list-group-item"><b>Nombre: </b>{{libro.titulo}}</li>
                     <li class="list-group-item"><b>Autor: </b>{{libro.autor.nombre}}</li>
+                    <li class="list-group-item"><b>Editorial: </b>{{libro.editorial.nombre}}</li>
+                    <li class="list-group-item"><b>Genero: </b>{{libro.genero.nombre}}</li>
                     <li class="list-group-item"><b>Ejemplares disponibles: </b>{{libro.ejemplares}}</li>
                     <li class="list-group-item"><b>Ejemplares prestados: </b>{{libro.ejemplares}}</li>
                 </ul>

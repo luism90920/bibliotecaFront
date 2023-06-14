@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-md-4 mx-auto">
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-                <h3>Nuevo autor:</h3>
+                <h3>Nuevo genero:</h3>
                 <div class="form-group mt-5">
-                    <label for="nombre">Nombre (Apellido Nombre)</label>
+                    <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required="">
                 </div>
                 <button class="btn btn-outline-success btn-block mt-3 col-12" [disabled]="!f.valid">Crear</button>

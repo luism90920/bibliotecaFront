@@ -1,0 +1,14 @@
+<div class="container-mt-3">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <h3>Nuevo Autor:</h3>
+                <div class="form-group mt-5">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="genero.nombre" required="">
+                </div>
+                <button class="btn btn-outline-success btn-block mt-3 col-12" [disabled]="!f.valid">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

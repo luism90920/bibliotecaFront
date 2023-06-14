@@ -5,6 +5,10 @@ import { ToastrService } from 'ngx-toastr';
 import { Libro } from '../models/libro';
 import { Autor } from '../models/autor';
 import { AutorService } from '../service/autor.service';
+import { GeneroService } from '../service/genero.service';
+import { EditorialService } from '../service/editorial.service';
+import { Editorial } from '../models/editorial';
+import { Genero } from '../models/genero';
 
 @Component({
   selector: 'app-editar-libro',
@@ -16,12 +20,16 @@ export class EditarLibroComponent implements OnInit{
   libro: Libro = null;
   titulo = '';
   autores: Autor[] = [];
-  nombreAutor = '';
+  editoriales: Editorial[] = [];
+  generos: Genero[] = [];
+  
 
 
   constructor(
     private libroService: LibroService,
     private autorService: AutorService,
+    private generoService: GeneroService,
+    private editorialService: EditorialService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
@@ -39,6 +47,28 @@ export class EditarLibroComponent implements OnInit{
     );
   }
 
+  cargarEditorial(): void {
+    this.editorialService.lista().subscribe(
+      data => {
+        this.editoriales = data;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  cargarGenero(): void {
+    this.generoService.lista().subscribe(
+      data => {
+        this.generos = data;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
   ngOnInit(): void {
       const id = this.activatedRoute.snapshot.params['id'];
       this.libroService.detail(id).subscribe(
@@ -48,9 +78,13 @@ export class EditarLibroComponent implements OnInit{
 
           //insertamos en el formulario de modificación el nombre el autor
           this.libro.nombreAutor = this.libro.autor.nombre;
+          this.libro.nombreGenero = this.libro.genero.nombre;
+          this.libro.nombreEditorial = this.libro.editorial.nombre;
 
           //cargamos el listado de autores para modificar el autor de ser necesario
           this.cargarAutor();
+          this.cargarGenero();
+          this.cargarEditorial();
         },
         err => {
           this.toastr.error(err.error.mensaje, 'Fail', {

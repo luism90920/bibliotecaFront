@@ -11,6 +11,16 @@
                         <option *ngFor="let autor of autores" [value]="autor.nombre">{{ autor.nombre }}</option>
                     </select>
 
+                    <label class="mt-3" for="nombreEditorial">Editorial</label>
+                    <select class="form-control" id="nombreEditorial" name="nombreEditorial" [(ngModel)]="libro.nombreEditorial">
+                        <option *ngFor="let editorial of editoriales" [value]="editorial.nombre">{{ editorial.nombre }}</option>
+                    </select>
+
+                    <label class="mt-3" for="nombreGenero">Genero</label>
+                    <select class="form-control" id="nombreGenero" name="nombreGenero" [(ngModel)]="libro.nombreGenero">
+                        <option *ngFor="let genero of generos" [value]="genero.nombre">{{ genero.nombre }}</option>
+                    </select>
+
                     <label class="mt-3" for="ejemplares">Cantidad de ejemplares</label>
                     <input type="text" class="form-control" id="ejemplares" name="ejemplares" [(ngModel)]="libro.ejemplares" required="">
 
