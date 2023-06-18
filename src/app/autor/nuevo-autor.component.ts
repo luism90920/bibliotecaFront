@@ -31,7 +31,7 @@ export class NuevoAutorComponent implements OnInit {
         this.toastr.success('Autor creado','OK',{
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/listaAutores']);
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail',{

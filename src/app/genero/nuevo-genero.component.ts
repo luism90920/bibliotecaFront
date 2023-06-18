@@ -30,7 +30,7 @@ export class NuevoGeneroComponent implements OnInit {
         this.toastr.success('Genero creado', 'OK',{
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/listaGeneros']);
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail',{

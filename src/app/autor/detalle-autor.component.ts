@@ -25,18 +25,6 @@ export class DetalleAutorComponent implements OnInit {
     private router: Router
   ){}
 
-  cargarLibro(): void{
-    const idAutor = this.activatedRoute.snapshot.params['id'];
-    this.libroService.listaLibroIdAutor(idAutor).subscribe(
-      data => {
-        this.libros = data;
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
-
   ngOnInit(): void {
     this.cargarLibro();
     const id = this.activatedRoute.snapshot.params['id'];
@@ -49,6 +37,18 @@ export class DetalleAutorComponent implements OnInit {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.volver();
+      }
+    );
+  }
+
+  cargarLibro(): void{
+    const idAutor = this.activatedRoute.snapshot.params['id'];
+    this.libroService.listaLibroIdAutor(idAutor).subscribe(
+      data => {
+        this.libros = data;
+      },
+      err => {
+        console.log(err);
       }
     );
   }

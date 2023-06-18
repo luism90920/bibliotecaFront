@@ -20,6 +20,14 @@ export class LibroService {
     return this.httpClient.get<Libro[]>(this.libroURL + `listaLibroIdAutor/${idAutor}`);
   }
 
+  public listaLibroIdGenero(idGenero: number): Observable<Libro[]>{
+    return this.httpClient.get<Libro[]>(this.libroURL + `listaLibroIdGenero/${idGenero}`);
+  }
+
+  public listaLibroIdEditorial(idEditorial: number): Observable<Libro[]>{
+    return this.httpClient.get<Libro[]>(this.libroURL +  `listaLibroIdEditorial/${idEditorial}`);
+  }
+
   public detail(id: number): Observable<Libro> {
     return this.httpClient.get<Libro>(this.libroURL + `detail/${id}`);
   }

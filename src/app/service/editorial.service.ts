@@ -24,7 +24,7 @@ export class EditorialService {
     return this.httpClient.post<any>(this.editorialURL + `create`,editorial);
   }
 
-  public update(editorial: Editorial, id: number): Observable<any>{
+  public update(id: number, editorial: Editorial): Observable<any>{
     return this.httpClient.put<any>(this.editorialURL + `update/${id}`, editorial);
   }
 
