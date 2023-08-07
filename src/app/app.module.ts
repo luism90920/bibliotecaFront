@@ -27,6 +27,10 @@ import { NuevoGeneroComponent } from './genero/nuevo-genero.component';
 import { ListaGeneroComponent } from './genero/lista-genero.component';
 import { EditarGeneroComponent } from './genero/editar-genero.component';
 import { DetalleGeneroComponent } from './genero/detalle-genero.component';
+import { LoginComponent } from './auth/login.component';
+import { RegistroComponent } from './auth/registro.component';
+import { MenuComponent } from './menu/menu.component';
+import { IndexComponent } from './index/index.component';
 
 
 
@@ -49,6 +53,10 @@ import { DetalleGeneroComponent } from './genero/detalle-genero.component';
     ListaGeneroComponent,
     EditarGeneroComponent,
     DetalleGeneroComponent,
+    LoginComponent,
+    RegistroComponent,
+    MenuComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,
